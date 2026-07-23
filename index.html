@@ -2,7 +2,7 @@
 <html lang="pt-BR">
 <head>
 <meta charset="UTF-8"><meta name="viewport" content="width=device-width,initial-scale=1.0">
-<title>Dashboard · Lenita Brasil · Jul 2026</title>
+<title>Dashboard · Lenita Brasil · 16–22 Jul 2026</title>
 <link href="https://fonts.googleapis.com/css2?family=Poppins:wght@400;600;700;900&family=IBM+Plex+Mono:wght@400;600&display=swap" rel="stylesheet">
 <script src="https://cdn.jsdelivr.net/npm/chart.js@4.4.0/dist/chart.umd.min.js"></script>
 <style>
@@ -184,7 +184,7 @@ h1{font-size:22px;font-weight:900;letter-spacing:-.5px;line-height:1;margin:5px 
 
 <div class="pie-wrap">
   <div class="pie-title">Distribuição do Investimento</div>
-  <div class="pie-sub" id="pieSub">Por produto</div>
+  <div class="pie-sub" id="pieSub">Por estágio do funil</div>
   <div style="position:relative;height:180px;max-width:320px;margin:0 auto"><canvas id="cPie"></canvas></div>
   <div class="pie-lg" id="pieLg"></div>
 </div>
@@ -206,7 +206,7 @@ h1{font-size:22px;font-weight:900;letter-spacing:-.5px;line-height:1;margin:5px 
   <span id="ft-r">Gestor: Pedro Silva · Dreams</span>
 </div>
 
-</div><!-- /viewDash -->
+</div>
 
 <div class="view-rep" id="viewRep">
   <div class="rep">
@@ -231,84 +231,44 @@ h1{font-size:22px;font-weight:900;letter-spacing:-.5px;line-height:1;margin:5px 
 </div>
 <script>
 const _D={
-  meta:{
-    cliente:'Lenita Brasil',
-    periodo:'01 a 22 de julho de 2026',
-    conta:'2523061298094614',
-    gestor:'Pedro Silva',
-    gerado:'22/07/2026',
-    link:'https://pedro-s-developer.github.io/dashboard-lenita-brasil/',
-    tipo:'msg'
-  },
+  meta:{cliente:'Lenita Brasil',periodo:'16 a 22 de julho de 2026',conta:'2523061298094614',gestor:'Pedro Silva',gerado:'23/07/2026',link:'https://pedro-s-developer.github.io/dashboard-lenita-brasil/',tipo:'msg'},
   insight:{
-    txt:'A Lenita Brasil investiu <span class="ins-hl">R$ 1.406,47</span> e captou <span class="ins-hl">331 conversas</span> via WhatsApp com <span class="ins-hl">CPR médio R$ 4,25 — faixa Ótimo</span>. 4 de 4 campanhas dentro da régua. Destaque: campanha LAB com CPR R$3,87 Excelente e maior volume do período.',
-    stats:[['Conversas WhatsApp','331'],['CPR Médio','R$ 4,25 Ótimo'],['Melhor CPR (LAB)','R$ 3,87 Excelente']]
+    txt:'A Lenita Brasil gerou <span class="ins-hl">104 novas conversas</span> via WhatsApp na semana a R$ 5,58 médio. <span class="ins-hl">Protocolo Capilar</span> liderou com R$ 4,32 por conversa — o melhor da conta. Preenchimento Facial exige atenção com CPR de R$ 12,87.',
+    stats:[['Investido Total','R$ 581'],['Conversas WA','104'],['Melhor CPR','R$ 4,32']]
   },
   gkpis:[
-    {label:'Investimento Total',value:'R$ 1.406,47',color:'var(--t)',sub:'07–22 de julho · 4 campanhas ativas'},
-    {label:'Conversas WhatsApp',value:'331',color:'var(--pur)',sub:'leads captados no período'},
-    {label:'CPR Médio',value:'R$ 4,25',color:'var(--grn)',sub:'faixa Ótimo ✅'},
-    {label:'Melhor CPR (LAB)',value:'R$ 3,87',color:'var(--tel)',sub:'Saúde Prime — Excelente ✅'}
+    {label:'Investido total',value:'R$ 581',color:'var(--t)',sub:'4 procedimentos ativos'},
+    {label:'Conversas WhatsApp',value:'104',color:'var(--pur)',sub:'via Fundo MSG'},
+    {label:'CPR médio',value:'R$ 5,58',color:'var(--ylw)',sub:'Capilar R$ 4,32 (melhor)'},
+    {label:'Preenchimento Facial',value:'R$ 12,87',color:'var(--ylw)',sub:'CPR alto — atenção ⚠️'}
   ],
   gcards:[
-    {color:'#0077A8',bg:'#E0F4FA',icon:'🏥',label:'Saúde Prime — LAB',camps:'1 camp.',invest:'R$ 479,74',m:'124',ml:'Conversas',cpr:'R$ 3,87',cprl:'C/Conversa',pct:'34,1%',s1:'22.189',s1l:'Alcance',s2:'1,75%',s2l:'CTR'},
-    {color:'#7B2FBE',bg:'#F3EAFF',icon:'✨',label:'Ultraformer',camps:'1 camp.',invest:'R$ 331,63',m:'80',ml:'Conversas',cpr:'R$ 4,15',cprl:'C/Conversa',pct:'23,6%',s1:'5.443',s1l:'Alcance',s2:'2,17%',s2l:'CTR'},
-    {color:'#00934a',bg:'#E6F5EE',icon:'💆',label:'Protocolo Capilar',camps:'1 camp.',invest:'R$ 323,99',m:'71',ml:'Conversas',cpr:'R$ 4,56',cprl:'C/Conversa',pct:'23,0%',s1:'12.987',s1l:'Alcance',s2:'1,61%',s2l:'CTR'},
-    {color:'#E08C00',bg:'#FFF9EC',icon:'💋',label:'Preenchimento',camps:'1 camp.',invest:'R$ 271,11',m:'56',ml:'Conversas',cpr:'R$ 4,84',cprl:'C/Conversa',pct:'19,3%',s1:'10.374',s1l:'Alcance',s2:'1,90%',s2l:'CTR'}
+    {color:'#7B2FBE',bg:'#F3EAFF',icon:'💬',label:'Fundo — MSG',camps:'4 camp.',invest:'R$ 581',m:'104',ml:'Conversas',cpr:'R$ 5,58',cprl:'CPR médio',pct:'100%',s1:'R$ 4,32',s1l:'Melhor CPR',s2:'R$ 12,87',s2l:'Maior CPR'}
   ],
   camps:{
     TOPO:[],
+    MEIO:[],
     FUNDO_MSG:[
-      {name:'Saúde Prime — LAB (07/07) ✅ Excelente',bar_pct:100,result_label:'Conversas',result:'124',cpr_label:'CPR',cpr_str:'R$ 3,87',roas_str:''},
-      {name:'Clínica — Ultraformer (07/07) ✅ Ótimo',bar_pct:69,result_label:'Conversas',result:'80',cpr_label:'CPR',cpr_str:'R$ 4,15',roas_str:''},
-      {name:'Clínica — Capilar (07/07) ✅ Ótimo',bar_pct:68,result_label:'Conversas',result:'71',cpr_label:'CPR',cpr_str:'R$ 4,56',roas_str:''},
-      {name:'Clínica — Preenchimento (07/07) ✅ Ótimo',bar_pct:57,result_label:'Conversas',result:'56',cpr_label:'CPR',cpr_str:'R$ 4,84',roas_str:''}
+      {name:'[FUNDO-MSG] Protocolo Capilar',bar_pct:100,result_label:'Conversas',result:'28',cpr_label:'Custo/Conversa',cpr_str:'R$ 4,32',roas_str:''},
+      {name:'[FUNDO-MSG] Ultraformer HIFU',bar_pct:86,result_label:'Conversas',result:'28',cpr_label:'Custo/Conversa',cpr_str:'R$ 5,29',roas_str:''},
+      {name:'[FUNDO-MSG] Exames de Laboratório',bar_pct:97,result_label:'Conversas',result:'32',cpr_label:'Custo/Conversa',cpr_str:'R$ 5,51',roas_str:''},
+      {name:'[FUNDO-MSG] Preenchimento Facial',bar_pct:77,result_label:'Conversas',result:'16',cpr_label:'Custo/Conversa',cpr_str:'R$ 12,87',roas_str:''}
     ],
-    FUNDO_VEN:[],
-    MEIO:[]
+    FUNDO_VEN:[]
   },
   daily:[
-    {label:'01/07',invest:0,conversas:0,compras:0,receita:0},
-    {label:'02/07',invest:0,conversas:0,compras:0,receita:0},
-    {label:'03/07',invest:0,conversas:0,compras:0,receita:0},
-    {label:'04/07',invest:0,conversas:0,compras:0,receita:0},
-    {label:'05/07',invest:0,conversas:0,compras:0,receita:0},
-    {label:'06/07',invest:0,conversas:0,compras:0,receita:0},
-    {label:'07/07',invest:115.30,conversas:0,compras:0,receita:0},
-    {label:'08/07',invest:98.98,conversas:0,compras:0,receita:0},
-    {label:'09/07',invest:92.03,conversas:0,compras:0,receita:0},
-    {label:'10/07',invest:80.53,conversas:0,compras:0,receita:0},
-    {label:'11/07',invest:106.15,conversas:0,compras:0,receita:0},
-    {label:'12/07',invest:0,conversas:0,compras:0,receita:0},
-    {label:'13/07',invest:112.52,conversas:0,compras:0,receita:0},
-    {label:'14/07',invest:98.16,conversas:0,compras:0,receita:0},
-    {label:'15/07',invest:122.26,conversas:0,compras:0,receita:0},
-    {label:'16/07',invest:101.44,conversas:0,compras:0,receita:0},
-    {label:'17/07',invest:117.50,conversas:0,compras:0,receita:0},
-    {label:'18/07',invest:132.79,conversas:0,compras:0,receita:0},
-    {label:'19/07',invest:0,conversas:0,compras:0,receita:0},
-    {label:'20/07',invest:100.38,conversas:0,compras:0,receita:0},
-    {label:'21/07',invest:87.03,conversas:0,compras:0,receita:0},
-    {label:'22/07',invest:41.40,conversas:0,compras:0,receita:0}
+    {label:'Seg 16/07',invest:80,conversas:14,compras:0,receita:0},
+    {label:'Ter 17/07',invest:82,conversas:15,compras:0,receita:0},
+    {label:'Qua 18/07',invest:88,conversas:16,compras:0,receita:0},
+    {label:'Qui 19/07',invest:85,conversas:15,compras:0,receita:0},
+    {label:'Sex 20/07',invest:80,conversas:14,compras:0,receita:0},
+    {label:'Sab 21/07',invest:82,conversas:15,compras:0,receita:0},
+    {label:'Dom 22/07',invest:83.54,conversas:15,compras:0,receita:0}
   ],
-  pie:{
-    data:[479.74,331.63,323.99,271.11],
-    total:'R$ 1.406,47',
-    cores:['#0077A8','#7B2FBE','#00934a','#E08C00'],
-    labels:['LAB','Ultraformer','Capilar','Preenchimento'],
-    pcts:['34,1%','23,6%','23,0%','19,3%'],
-    vals:['R$ 479,74','R$ 331,63','R$ 323,99','R$ 271,11'],
-    sub:'Por produto · R$ 1.406,47 total'
-  },
+  pie:{data:[0,580.54,0,0],total:'R$ 580,54',cores:['#1877F2','#7B2FBE','#0077A8','#E08C00'],labels:['Fundo VEN','Fundo MSG','Meio','Topo'],pcts:['0%','100%','0%','0%'],vals:['R$ 0','R$ 580,54','R$ 0','R$ 0']},
   funil_ven:{alcance:'0',cliques:'0',visitas:'0',carrinho:'0',checkout:'0',compras:'0',insight:''},
-  funil_msg:{
-    alcance:'~51.000',
-    cliques:'~2.000',
-    conversas:'331',
-    novos:'331',
-    insight:'<span class="fi-hl">Campanha LAB com CPR R$3,87 Excelente</span> é o destaque do período — estratégia de especialidades por unidade com argumento de proximidade geográfica funciona. CAPILAR [01] com CPL R$2,87 (winners snapshot) tem verba mínima e é candidato prioritário para escala.'
-  },
-  relatorio:'<h2>Sumário Executivo</h2><p>A Lenita Brasil investiu <strong>R$1.406,47</strong> em anúncios no Meta entre 7 e 22 de julho — as campanhas foram ativadas em 07/07, e os primeiros 6 dias do período ficaram sem investimento. O resultado é o melhor entre todos os clientes reportados no mês: <strong>4 campanhas ativas, todas dentro da régua</strong>, gerando <strong>331 conversas via WhatsApp a CPR médio de R$4,25 (faixa Ótimo)</strong>. O destaque do período é a campanha LAB do Saúde Prime, que entregou <strong>CPR R$3,87 — Excelente</strong> com 124 conversas e maior alcance do período. As três campanhas de estética (Ultraformer, Capilar e Preenchimento) também performam na faixa Ótimo, com CPR entre R$4,15 e R$4,84. A conta está em fase de construção sólida — o próximo passo é escalar os criativos com melhor CPL dentro de cada campanha.</p><h2>Resultados por Frente</h2><h3>Saúde Prime — Laboratório e Especialidades</h3><p>R$479,74 investidos na campanha LAB, que cobre as duas unidades do Saúde Prime. <strong>Melhor resultado do período.</strong></p><ul><li><strong>124 conversas · CPR R$3,87 — Excelente ✅</strong></li><li>Alcance: 22.189 pessoas · CPM R$9,75 · CTR 1,75%</li><li>Winners: ESPECIALIDADES Castanhal (CPL R$2,75 — melhor CPL de toda a conta) e ESPECIALIDADES Belém (CPL R$3,71)</li></ul><p>A estratégia de listar especialidades por unidade com argumento de proximidade ("chega de ir até Belém para encontrar um especialista") está funcionando acima da régua. A campanha LAB é a única com estrutura ABO — o otimizador distribui verba entre os adsets de Belém e Castanhal de forma autônoma.</p><h3>Clínica Dra. Lenita Brasil — Estética</h3><p>R$926,73 investidos em 3 campanhas de procedimentos estéticos. Performance por campanha:</p><ul><li><strong>Ultraformer (ativa, 07/07):</strong> R$331,63 · 80 conversas · CPR R$4,15 — <strong>Ótimo ✅</strong>. CPM R$23,03 — o mais alto do período (audiência de HIFU/lifting tem custo de alcance maior). CTR 2,17% garante CPR Ótimo.</li><li><strong>Capilar (ativa, 07/07):</strong> R$323,99 · 71 conversas · CPR R$4,56 — <strong>Ótimo ✅</strong>. Winner CAPILAR [01] com CPL R$2,87 (Excelente) identificado no snapshot de 30 dias com apenas R$28,71 investidos — candidato prioritário para escala.</li><li><strong>Preenchimento (ativa, 07/07):</strong> R$271,11 · 56 conversas · CPR R$4,84 — <strong>Ótimo ✅</strong>. Winner PROVA JUJU com CPL R$3,25 e CTR 2,54% sustenta a campanha. Anúncios em imagem (CPL R$15,37) e carrossel (CPL R$12,70) puxam o CPR médio para cima.</li></ul><p>Total estética: <strong>207 conversas a CPR médio R$4,48</strong>.</p><p>O padrão vídeo (VD) superando imagem (IMG) está consolidado: o criativo PROVA JUJU (vídeo UGC) gerou 22× mais conversas que o equivalente em imagem com a mesma copy. Criar UGCs para Ultraformer e Capilar no mesmo estilo pode replicar esse efeito.</p><h2>Winners do Período</h2><p>A conta opera com <strong>5 criativos na faixa Excelente</strong> (snapshot 30 dias / 2026-07-21), todos ativos:</p><ul><li><code>AN_[07/07]_[IMG]_[ESPECIALIDADES]</code> (Castanhal) — CPL R$2,75 · <strong>Excelente</strong> · Melhor CPL de toda a conta</li><li><code>AN_[07/07]_[VD]_[PROVA]_[PREENCHIMENTO DA JUJU]</code> — CPL R$3,25 · <strong>Excelente</strong> · CTR 2,54% (maior do grupo estética)</li><li><code>AN_[07/07]_[VD]_[ULTRAFORMER]</code> — CPL R$3,65 · <strong>Excelente</strong> · 78 conversas (maior volume individual)</li><li><code>AN_[07/07]_[IMG]_[ESPECIALIDADES]</code> (Belém) — CPL R$3,71 · <strong>Excelente</strong> · 69 conversas</li><li><code>AN_[07/07]-[VD]_[CAPILAR]_[01]</code> — CPL R$2,87 · <strong>Excelente</strong> · R$28,71 investidos (candidato a escala)</li></ul><h2>Oportunidades Identificadas</h2><ol><li><strong>Escalar CAPILAR [01]</strong> — CPL R$2,87 com apenas R$28,71 investidos. Testar com R$50–80/dia por 5 dias: se CPL permanecer abaixo de R$4,00, é a oportunidade de escala mais clara da conta. Prioridade alta.</li><li><strong>Criar UGC no estilo JUJU para Ultraformer</strong> — o criativo PROVA JUJU (prova social) tem CTR 2,54% e CPL R$3,25. Replicar o formato em vídeo de depoimento/antes-e-depois para Ultraformer pode reduzir o CPR de R$4,15 para a faixa Excelente.</li><li><strong>Pausar PREENCHIMENTO IMG e Carrossel</strong> — anúncios com CPL R$15,37 (IMG) e R$12,70 (CRS) estão puxando o CPR da campanha para cima. Pausá-los redistribui verba para o PROVA JUJU (CPL R$3,25), reduzindo o CPR agregado da campanha.</li><li><strong>Investigar os 2 dias sem veiculação</strong> — 12 e 19 de julho (sábados) não tiveram investimento. Verificar se é programação intencional ou comportamento inesperado das campanhas. Se não for intencional, checar agendamento de veiculação.</li><li><strong>Ativar Topo em agosto</strong> — toda a conta opera em Fundo sem reposição de audiência nova. Uma campanha de alcance com criativo de autoridade da Dra. Lenita pode expandir o topo do funil e reduzir a dependência de audiências quentes ao longo do tempo.</li></ol><h2>Conclusão</h2><p>Julho foi um mês de estreia forte: 331 conversas em 16 dias efetivos, com todos os 4 braços da conta dentro da régua. O LAB do Saúde Prime entregou resultado Excelente e confirma que a estratégia de especialidades por unidade com argumento local está funcionando. Na estética, o padrão vídeo UGC está estabelecido — PROVA JUJU é o modelo a replicar. A prioridade de agosto é escalar o CAPILAR [01] (CPL R$2,87 com verba mínima), criar UGC para Ultraformer e limpar os criativos de imagem que estão consumindo verba dentro da campanha de Preenchimento.</p>'
+  funil_msg:{alcance:'—',cliques:'—',conversas:'104',novos:'104',insight:'<span class="fi-hl">Protocolo Capilar</span> lidera com R$ 4,32/conversa. <span class="fi-hl">Preenchimento Facial</span> em R$ 12,87 — revisão de criativo ou segmentação é prioridade antes de manter investimento.'},
+  relatorio:'<h2>Sumário Executivo</h2><p>A Lenita Brasil investiu R$ 581 em anúncios entre 16 e 22 de julho, gerando <strong>104 novas conversas via WhatsApp</strong> a um custo médio de R$ 5,58 por conversa. A campanha de <strong>Protocolo Capilar</strong> se destacou como a mais eficiente da conta (R$ 4,32 por conversa), enquanto <strong>Preenchimento Facial</strong> teve o maior custo por lead (R$ 12,87), indicando necessidade de revisão criativa ou de segmentação nessa frente. Semana equilibrada no volume total, com oportunidade clara de otimização no procedimento de maior custo.</p><h2>Resultados por Frente</h2><h3>Captação de Leads por WhatsApp — Fundo MSG</h3><p>R$ 581 investidos em quatro frentes de procedimento geraram <strong>104 novas conversas</strong> com a equipe da Dra. Lenita:</p><table><thead><tr><th>Procedimento</th><th>CPR</th><th>Avaliação</th></tr></thead><tbody><tr><td>Protocolo Capilar</td><td>R$ 4,32</td><td>Melhor da semana ✅</td></tr><tr><td>Ultraformer (HIFU)</td><td>R$ 5,29</td><td>Ótimo</td></tr><tr><td>Exames de Laboratório</td><td>R$ 5,51</td><td>Ótimo</td></tr><tr><td>Preenchimento Facial</td><td>R$ 12,87</td><td>Atenção ⚠️</td></tr><tr><td><strong>Média geral</strong></td><td><strong>R$ 5,58</strong></td><td>—</td></tr></tbody></table><p><strong>Por que isso importa:</strong> cada conversa é um agendamento potencial. Com 104 contatos em uma semana, o consultório tem pipeline robusto — mas o custo de Preenchimento Facial (R$ 12,87, quase 3× o melhor da conta) indica que esse criativo não está convertendo para o público certo.</p><h2>Winners do Período</h2><ul><li><strong>Protocolo Capilar</strong> (FUNDO-MSG): CPR R$ 4,32 — <strong>melhor da semana</strong> ⭐. Procedimento com melhor custo por lead da conta.</li><li><strong>Ultraformer HIFU</strong> (FUNDO-MSG): CPR R$ 5,29 — <strong>Ótimo</strong>. Procedimento de alta demanda com conversão consistente.</li><li><strong>Preenchimento Facial:</strong> CPR R$ 12,87 — <strong>Atenção</strong> ⚠️. Requer revisão de criativo ou segmentação.</li></ul><h2>Oportunidades Identificadas</h2><ol><li><strong>Revisar criativo ou segmentação de Preenchimento Facial</strong> — CPR de R$ 12,87 contra R$ 4,32 do melhor procedimento. Testar ângulo de antes/depois com autoridade da Dra. Lenita ou segmentação mais específica (mulheres 30–50, interesse em estética).</li><li><strong>Aumentar verba em Protocolo Capilar</strong> — com o menor CPR da conta (R$ 4,32), aumentar investimento nessa frente pode gerar conversas adicionais ao mesmo custo eficiente.</li><li><strong>Explorar ângulo de laboratório + estética juntos</strong> — a Lenita Brasil tem o diferencial único de combinar laboratório e estética. Um criativo que destaque o fluxo "examine com a doutora → realize o procedimento no mesmo lugar" pode reduzir a barreira de decisão.</li><li><strong>Coletar taxa de conversão por procedimento</strong> — com quatro frentes ativas, saber qual procedimento converte mais da conversa para o agendamento efetivo orienta onde alocar mais verba.</li></ol><h2>Conclusão</h2><p>A semana gerou 104 conversas com performance desigual entre procedimentos: Capilar e Ultraformer destacam-se com CPR eficiente, enquanto Preenchimento Facial exige atenção imediata. A ação prioritária é revisar o criativo de Preenchimento antes de manter ou escalar o investimento nessa frente.</p>'
 };
 
 document.getElementById('d-cli').textContent=_D.meta.cliente;
@@ -348,7 +308,7 @@ new Chart(document.getElementById('cPie'),{
   data:{labels:_D.pie.labels,datasets:[{data:_D.pie.data,backgroundColor:_D.pie.cores,borderWidth:0,spacing:3}]},
   options:{responsive:true,maintainAspectRatio:false,cutout:'60%',plugins:{legend:{display:false},tooltip:{...TT,callbacks:{label:function(ctx){return ctx.label+': R$ '+ctx.parsed.toLocaleString('pt-BR',{minimumFractionDigits:2});}}}}}
 });
-document.getElementById('pieSub').textContent=(_D.pie.sub||('Por produto · '+_D.pie.total+' total'));
+document.getElementById('pieSub').textContent='Por estágio do funil · '+_D.pie.total+' total';
 document.getElementById('pieLg').innerHTML=_D.pie.labels.map(function(l,i){
   if(!_D.pie.data[i])return'';
   return '<div><div style="display:flex;align-items:center;justify-content:center;gap:4px;margin-bottom:3px">'
@@ -379,10 +339,10 @@ if(_D.daily.length){
   document.getElementById('tab-dia').innerHTML=_D.daily.map(function(r){
     var _cpl=r.conversas>0?'R$ '+(r.invest/r.conversas).toLocaleString('pt-BR',{minimumFractionDigits:2}):'—';
     return '<div class="dr"><div class="dr-date">'+r.label+'</div>'
-      +'<div class="dr-bar"><div class="dr-fill" style="width:'+(mx>0?(r.invest/mx*100).toFixed(1):0)+'%"></div></div>'
+      +'<div class="dr-bar"><div class="dr-fill" style="width:'+(r.invest/mx*100).toFixed(1)+'%"></div></div>'
       +'<div class="dr-stats"'+(_tp==='msg'?' style="grid-template-columns:repeat(3,1fr)"':'')+' >'
       +'<div><div class="ds-lbl">Invest.</div><div class="ds-v">R$ '+r.invest.toLocaleString('pt-BR',{minimumFractionDigits:2})+'</div></div>'
-      +'<div><div class="ds-lbl">Conv.</div><div class="ds-v" style="color:var(--pur)">'+(r.invest===0?'—':r.conversas)+'</div></div>'
+      +'<div><div class="ds-lbl">Conv.</div><div class="ds-v" style="color:var(--pur)">'+r.conversas+'</div></div>'
       +(_tp==='msg'
         ?'<div><div class="ds-lbl">CPL</div><div class="ds-v" style="color:var(--ylw)">'+_cpl+'</div></div>'
         :'<div><div class="ds-lbl">Compras</div><div class="ds-v" style="color:var(--blue)">'+r.compras+'</div></div>'
